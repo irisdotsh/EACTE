@@ -90,8 +90,6 @@ public sealed class Plugin : IDalamudPlugin
         {
             try
             {
-                Log.Information($"Sending ACT end message after {Configuration.Seconds} seconds");
-
                 Thread.Sleep(Configuration.Seconds*1000);
 
                 ChatGui.Print(new XivChatEntry()
@@ -99,14 +97,12 @@ public sealed class Plugin : IDalamudPlugin
                     Type = XivChatType.Echo,
                     Message = "end"
                 });
+
+                Log.Information($"Sent ACT end message after {Configuration.Seconds} seconds");
             }
             catch (Exception err)
             {
                 Log.Warning("Unable to send ACT end message: {0}", err);
-            }
-            finally
-            {
-
             }
         }).Start();
     }
