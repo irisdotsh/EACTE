@@ -34,4 +34,4 @@ jobs:
               with:
                 name: build.zip
                 path: |
-                    EACTE/bin/Release/EACTE/latest.zip
+                    EACTE/bin/x64/Release/EACTE/latest.zip
